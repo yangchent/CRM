@@ -1,5 +1,7 @@
 const mongoose= require('mongoose');
 const schema= new mongoose.Schema({
+    userId: {
+        type : mongoose.Types.ObjectId, ref: "User"},
     name :{
         type: String,
         required : true
@@ -10,5 +12,4 @@ const schema= new mongoose.Schema({
 
 })
 const Contact = mongoose.model("Contact", schema);
-
 module.exports = Contact;
