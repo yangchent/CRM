@@ -8,8 +8,7 @@ const schema= new mongoose.Schema({
     },
     email : String,
     description: String,
-    category: Number
-
+    catergory: Number
 })
 const Contact = mongoose.model("Contact", schema);
 module.exports = Contact;
