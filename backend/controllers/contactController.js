@@ -70,9 +70,39 @@ const contactGet= async (req,res)=>  {
         }
        };
 
-module.exports= {
+// Catergory
+const catergoryId= async (req,res)=>  {
+    const objKey= Object.keys(req.query) [0];
+    const objVal= Object.values(req.query)[0];
+        try{
+        const info= await Contact.find({[objKey]:[objVal]} )
+        res.json({
+            status: "ok",
+            data: info
+        })
+    } catch(error){
+        return res.status(404).json({
+            message: "Bad request"
+        })
+    }}
+// logout
+// const logout= async (req,res)=>  {
+   
+//     try{
+//         await Contact.clearCookies('jwt')
+//         res.json({
+//             status: "ok",
+//             message: "loggedout"
+//         })
+//     } catch(error){
+//         return res.status(404).json({
+//             message: "Bad request"
+//         })
+//     }};
+    module.exports= {
     contactAdd: contactAdd,
     contactGet: contactGet,
     contactEdit: contactEdit,
     contactDelete: contactDelete,
+    catergoryId: catergoryId
 }
