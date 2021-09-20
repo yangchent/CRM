@@ -1,10 +1,11 @@
 const express= require('express');
 const app= express();
 app.use(express.json());
-const userRouter= require("./route/userRouter")
-const contactRouter= require("./route/contactRouter")
+const userRouter= require("./route/userRouter");
+const contactRouter= require("./route/contactRouter");
 
 const dotenv = require("dotenv");
+
 dotenv.config({
     path: "./config.env",
 });
