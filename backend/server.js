@@ -3,7 +3,7 @@ const app= express();
 app.use(express.json());
 const userRouter= require("./route/userRouter");
 const contactRouter= require("./route/contactRouter");
-
+const port= process.env.PORT || 8000
 const dotenv = require("dotenv");
 
 dotenv.config({
@@ -30,6 +30,6 @@ app.use("/user", userRouter);
 app.use("/contact",contactRouter);
 
 //app listening
-app.listen(process.env.PORT,()=> {
-    console.log("server started on 8000");
+app.listen(port,()=> {
+    console.log(`server started on ${PORT}`);
 });
