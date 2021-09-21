@@ -86,24 +86,20 @@ const catergoryId= async (req,res)=>  {
         })
     }}
 // logout
-// const logout= async (req,res)=>  {
+const logout= (_req,res)=>  {
    
-//     try{
-//         await Contact.clearCookies('jwt')
-//         res.json({
-//             status: "ok",
-//             message: "loggedout"
-//         })
-//     } catch(error){
-//         return res.status(404).json({
-//             message: "Bad request"
-//         })
-//     }};
+     res.ClearCookie('jwt')
+        res.json({
+            status: "ok",
+            message: "loggedout"
+        })
+}
 
     module.exports= {
     contactAdd: contactAdd,
     contactGet: contactGet,
     contactEdit: contactEdit,
     contactDelete: contactDelete,
-    catergoryId: catergoryId
+    catergoryId: catergoryId,
+    logout: logout
 }

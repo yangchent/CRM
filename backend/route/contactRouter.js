@@ -9,4 +9,5 @@ router.get("/", protect,contactController.contactGet)
 router.put("/:id", protect,contactController.contactEdit)
 router.delete("/:id",protect, contactController.contactDelete)
 router.get("/cat", contactController.catergoryId)
+router.get("/logout", contactController.logout)
 module.exports= router;
